@@ -31,10 +31,18 @@
   --ff-heading-300: 200px;
   --ff-body-100: 14px;
   --ff-body-200: 18px;
+  --max-width: 1464px;
 }
 
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--ff);
+  background-color: var(--white);
+}
+
+button,
+select,
+input,
+textarea{
+  font-family: inherit;
 }
