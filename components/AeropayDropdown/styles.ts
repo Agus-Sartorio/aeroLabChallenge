@@ -31,3 +31,6 @@ export const StyledAeropay = styled.button`
         transition: transform 300ms;
     }
 `
+export const StyledContainer = styled.div`
+    position: relative;
+`
