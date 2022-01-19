@@ -1,6 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head';
+import Hero from '../components/Hero';
 import NavBar from '../components/NavBar';
+import Walkthrough from '../components/Walkthrough';
 
 const Home: NextPage = () => {
   return (
@@ -9,6 +11,8 @@ const Home: NextPage = () => {
         <title>Aerolab Challenge</title>
       </Head>
       <NavBar />
+      <Hero />
+      <Walkthrough />
     </>
   )
 }
