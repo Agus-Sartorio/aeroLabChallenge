@@ -22,7 +22,7 @@
   --green-light: #CCFFE3;
   --red: #E07F4F;
   --red-light: #FFDFD9;
-  --illustration-bg: linear-gradient(90deg, #7296EB, #EAC0E9);
+  --illustration-bg: linear-gradient(90deg, #176feb80, #ff80ff80);
   --section-bg: linear-gradient(90deg, #176FEB, #FF80FF);
   --aerolab: linear-gradient(90deg, #FF8800, #FF6600);
   --ff:'Montserrat', 'Tahoma', sans-serif;
@@ -45,4 +45,9 @@ select,
 input,
 textarea{
   font-family: inherit;
+}
+
+.container{
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
