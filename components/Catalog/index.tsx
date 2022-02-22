@@ -91,7 +91,7 @@ export default function Catalog() {
   };
 
   return (
-    <StyledCatalog>
+    <StyledCatalog id="catalog">
       <h2>
         <span>TECH</span> PRODUCTS
       </h2>

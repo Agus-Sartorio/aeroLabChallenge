@@ -39,6 +39,7 @@ html,
 body {
   font-family: var(--ff);
   background-color: var(--white);
+  scroll-behavior: smooth;
 }
 
 button,
