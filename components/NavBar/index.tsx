@@ -1,14 +1,18 @@
-import Image from 'next/image';
-import { StyledNavBar } from './styles'
-import AeropayDropdown from '../AeropayDropdown'
+import { StyledNavBar } from "./styles";
+import AeropayDropdown from "../AeropayDropdown";
+import Link from "next/link";
 
 const NavBar = () => {
-    return (
-        <StyledNavBar>
-            <Image src="/assets/icons/aerolab-logo-1.svg" width='126' height='48' alt="" />
-            <AeropayDropdown />
-        </StyledNavBar>
-    )
-}
+  return (
+    <StyledNavBar>
+      <Link href="/">
+        <a>
+          <span className="sr_only">aerolab</span>
+        </a>
+      </Link>
+      <AeropayDropdown />
+    </StyledNavBar>
+  );
+};
 
 export default NavBar;
