@@ -25,9 +25,7 @@ const Hero = () => {
           />
         </a>
       </div>
-      <div className="hero-img">
-        <Image src={hero} alt="" />
-      </div>
+      <div className="hero-img" aria-hidden="true" />
     </StyledHero>
   );
 };

@@ -5,7 +5,7 @@ export const StyledHero = styled.section`
   max-width: var(--max-width);
   margin: 0 auto;
   background-image: url("/assets/illustrations/single-wave-pattern.svg");
-  align-items: center;
+  /*  align-items: center; */
   justify-content: space-between;
   overflow-y: hidden;
 
@@ -65,5 +65,45 @@ export const StyledHero = styled.section`
 
   .hero-img {
     margin-top: -85px;
+    width: 100%;
+    background-image: url("assets/illustrations/Hero-bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center 10px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+
+    & > div:first-child {
+      text-align: center;
+    }
+
+    .texto1 {
+      font-size: 16px;
+    }
+
+    .texto2,
+    .texto3 {
+      font-size: 96px;
+    }
+
+    p {
+      font-size: 16px;
+      max-width: 290px;
+      margin: 24px auto 0;
+    }
+
+    a {
+      margin-top: 40px;
+      padding: 20px 48px;
+      font-size: 16px;
+    }
+
+    .hero-img {
+      height: 520px;
+      margin-top: 50px;
+      background-image: url("assets/illustrations/hero-responsive.png");
+    }
   }
 `;
