@@ -106,4 +106,11 @@ export const StyledHero = styled.section`
       background-image: url("assets/illustrations/hero-responsive.png");
     }
   }
+
+  @media (max-width: 375px) {
+    .hero-img {
+      background-size: cover;
+      margin-top: 0;
+    }
+  }
 `;

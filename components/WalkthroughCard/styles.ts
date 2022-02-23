@@ -62,4 +62,7 @@ export const StyledArticle = styled.article`
       flex: 1;
     }
   }
+
+  @media (max-width: 375px) {
+  }
 `;

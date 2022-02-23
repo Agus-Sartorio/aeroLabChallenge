@@ -43,4 +43,23 @@ export const StyledSection = styled.section`
       display: flex;
     }
   }
+
+  @media (max-width: 375px) {
+    padding-top: 363px;
+    margin-top: -380px;
+
+    .container {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .card {
+      width: 100%;
+    }
+
+    .card:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
 `;
