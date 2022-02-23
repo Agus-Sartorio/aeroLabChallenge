@@ -36,6 +36,10 @@ export const StyledProduct = styled.article`
     letter-spacing: 1px;
     margin-top: 3px;
   }
+
+  @media (max-width: 1024px) {
+    width: 311px;
+  }
 `;
 
 export const Btn = styled.button`

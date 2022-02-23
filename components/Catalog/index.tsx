@@ -14,15 +14,33 @@ export interface Product {
   };
 }
 
-const amountPerPage = 16;
-
 export default function Catalog() {
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [mostRecentProduct, setMostRecentProduct] = useState<Product[]>([]);
+  const [amountPerPage, setAmountPerPage] = useState(16);
   const [filtered, setFiltered] = useState(false);
   const categorias = Array.from(new Set(products.map((p) => p.category)));
+
+  const resizeFunction = () => {
+    if (window.innerWidth <= 1024) {
+      setAmountPerPage(12);
+    }
+  };
+
+  console.log(amountPerPage);
+
+  useEffect(() => {
+    setFilteredProducts(() => products.slice(0, amountPerPage));
+  }, [amountPerPage]);
+
+  useEffect(() => {
+    window.addEventListener("resize", resizeFunction);
+    return () => {
+      window.removeEventListener("resize", resizeFunction);
+    };
+  }, []);
 
   useEffect(() => {
     fetch("https://coding-challenge-api.aerolab.co/products", {
@@ -37,6 +55,7 @@ export default function Catalog() {
       .then((response) => {
         setMostRecentProduct(response);
         setProducts(response);
+        window.innerWidth <= 1024 ? setAmountPerPage(12) : setAmountPerPage(16);
         setFilteredProducts(response.slice(0, amountPerPage));
       });
   }, []);
@@ -55,7 +74,6 @@ export default function Catalog() {
   };
 
   useEffect(() => displayProducts(), [currentPage]);
-  console.log(mostRecentProduct);
 
   const handleSort = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.value === "Most Recent") {
@@ -96,57 +114,64 @@ export default function Catalog() {
         <span>TECH</span> PRODUCTS
       </h2>
       <div className="container">
-        <div className="filter__container">
-          <label className="label__filter" htmlFor="filter">
-            Filter By
-          </label>
-          <select
-            onChange={handleFilter}
-            className="filter__select"
-            id="filter"
-          >
-            <option value="all">All Products</option>
-            {categorias.map((c) => {
-              return (
-                <option key={c} value={c}>
-                  {c}
-                </option>
-              );
-            })}
-          </select>
-        </div>
-        <div className="sort__container">
-          <p>Sort by:</p>
-          <input
-            type="radio"
-            name="points"
-            id="value1"
-            value="Most Recent"
-            onChange={handleSort}
-          />
-          <label htmlFor="value1">
-            <span>Most Recent</span>
-          </label>
-          <input
-            type="radio"
-            name="points"
-            id="value2"
-            value="Lowest Price"
-            onChange={handleSort}
-          />
-          <label htmlFor="value2">
-            <span>Lowest Price</span>
-          </label>
-          <input
-            type="radio"
-            name="points"
-            id="value3"
-            value="Highest Price"
-            onChange={handleSort}
-          />
-          <label htmlFor="value3">
-            <span>Highest Price</span>
-          </label>
+        <div className="flex__container">
+          <div className="filter__container">
+            <label
+              className={`label__filter ${
+                amountPerPage === 12 ? "sr_only" : ""
+              }`}
+              htmlFor="filter"
+            >
+              Filter By
+            </label>
+            <select
+              onChange={handleFilter}
+              className="filter__select"
+              id="filter"
+            >
+              <option value="all">All Products</option>
+              {categorias.map((c) => {
+                return (
+                  <option key={c} value={c}>
+                    {c}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+          <div className="sort__container">
+            <p className={amountPerPage === 12 ? "sr_only" : ""}>Sort by:</p>
+            <input
+              type="radio"
+              name="points"
+              id="value1"
+              value="Most Recent"
+              onChange={handleSort}
+            />
+            <label htmlFor="value1">
+              <span>Most Recent</span>
+            </label>
+            <input
+              type="radio"
+              name="points"
+              id="value2"
+              value="Lowest Price"
+              onChange={handleSort}
+            />
+            <label htmlFor="value2">
+              <span>Lowest Price</span>
+            </label>
+            <input
+              type="radio"
+              name="points"
+              id="value3"
+              value="Highest Price"
+              onChange={handleSort}
+            />
+            <label htmlFor="value3">
+              <span>Highest Price</span>
+            </label>
+          </div>
         </div>
         <Pagination
           productAmount={filtered ? filteredProducts.length : products.length}

@@ -22,22 +22,6 @@ export default function Pagination({
   };
   const totalPages = Math.ceil(productAmount / 16);
 
-  /*   const displayProducts = () => {
-    const amountPerPage = 16;
-    if (currentPage === 1) {
-      setFilteredProducts((filteredProducts) =>
-        filteredProducts.slice(0, amountPerPage - 1)
-      );
-    } else {
-      setFilteredProducts((filteredProducts) =>
-        filteredProducts.slice(
-          amountPerPage * (currentPage - 1),
-          amountPerPage * currentPage
-        )
-      );
-    }
-  }; */
-
   return (
     <StyledPagination>
       <button

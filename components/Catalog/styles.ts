@@ -21,6 +21,10 @@ export const StyledCatalog = styled.section`
     color: var(--grey-600);
   }
 
+  .flex__container {
+    display: flex;
+  }
+
   .filter__container {
     margin-right: 40px;
     padding-right: 40px;
@@ -36,6 +40,7 @@ export const StyledCatalog = styled.section`
     border-radius: 16px;
     border: 1px solid #dae4f2;
     color: var(--grey-600);
+    background-color: white;
     font-size: inherit;
   }
 
@@ -100,6 +105,46 @@ export const StyledCatalog = styled.section`
       position: absolute;
       top: 0;
       right: 0;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 0 20px;
+
+    h2 {
+      font-size: 32px;
+    }
+
+    .flex__container {
+      flex-direction: column;
+    }
+
+    .container {
+      align-items: flex-start;
+    }
+
+    .filter__container {
+      padding: 0;
+      border: none;
+      margin: 0 0 27px;
+    }
+
+    .products {
+      justify-content: center;
+      gap: 48px 24px;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+
+      & > div:last-child {
+        position: static;
+        margin-left: 0;
+        margin-bottom: 20px;
+      }
     }
   }
 `;
