@@ -24,8 +24,12 @@ export default function Catalog() {
   const categorias = Array.from(new Set(products.map((p) => p.category)));
 
   const resizeFunction = () => {
-    if (window.innerWidth <= 1024) {
+    if (window.innerWidth <= 375) {
+      setAmountPerPage(8);
+    } else if (window.innerWidth <= 1024) {
       setAmountPerPage(12);
+    } else {
+      setAmountPerPage(16);
     }
   };
 
@@ -55,7 +59,7 @@ export default function Catalog() {
       .then((response) => {
         setMostRecentProduct(response);
         setProducts(response);
-        window.innerWidth <= 1024 ? setAmountPerPage(12) : setAmountPerPage(16);
+        resizeFunction();
         setFilteredProducts(response.slice(0, amountPerPage));
       });
   }, []);
@@ -118,7 +122,7 @@ export default function Catalog() {
           <div className="filter__container">
             <label
               className={`label__filter ${
-                amountPerPage === 12 ? "sr_only" : ""
+                amountPerPage !== 16 ? "sr_only" : ""
               }`}
               htmlFor="filter"
             >
@@ -140,7 +144,7 @@ export default function Catalog() {
             </select>
           </div>
           <div className="sort__container">
-            <p className={amountPerPage === 12 ? "sr_only" : ""}>Sort by:</p>
+            <p className={amountPerPage !== 16 ? "sr_only" : ""}>Sort by:</p>
             <input
               type="radio"
               name="points"
@@ -173,11 +177,14 @@ export default function Catalog() {
             </label>
           </div>
         </div>
-        <Pagination
-          productAmount={filtered ? filteredProducts.length : products.length}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
+        {amountPerPage !== 8 && (
+          <Pagination
+            productAmount={filtered ? filteredProducts.length : products.length}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            amountPerPage={amountPerPage}
+          />
+        )}
       </div>
       <div className="products">
         {filteredProducts.map((p) => (
@@ -195,6 +202,7 @@ export default function Catalog() {
           productAmount={filtered ? filteredProducts.length : products.length}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
+          amountPerPage={amountPerPage}
         />
       </footer>
     </StyledCatalog>

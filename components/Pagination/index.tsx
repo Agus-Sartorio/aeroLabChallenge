@@ -7,12 +7,14 @@ interface Props {
   productAmount: number;
   currentPage: number;
   setCurrentPage: Dispatch<SetStateAction<number>>;
+  amountPerPage: number;
 }
 
 export default function Pagination({
   productAmount,
   currentPage,
   setCurrentPage,
+  amountPerPage,
 }: Props) {
   const nextPage = () => {
     setCurrentPage(currentPage + 1);
@@ -20,7 +22,7 @@ export default function Pagination({
   const previousPage = () => {
     setCurrentPage(currentPage - 1);
   };
-  const totalPages = Math.ceil(productAmount / 16);
+  const totalPages = Math.ceil(productAmount / amountPerPage);
 
   return (
     <StyledPagination>
