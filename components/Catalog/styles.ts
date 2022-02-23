@@ -147,4 +147,28 @@ export const StyledCatalog = styled.section`
       }
     }
   }
+
+  @media (max-width: 375px) {
+    h2 {
+      text-align: center;
+    }
+    .filter__select,
+    .filter__container {
+      width: 100%;
+    }
+
+    .sort__container {
+      width: calc(100vw - 40px);
+      overflow-x: auto;
+      display: block;
+      white-space: nowrap;
+
+      label {
+        display: inline-block;
+        padding: 8px 16px;
+        font-size: 16px;
+        margin-right: 4px;
+      }
+    }
+  }
 `;
