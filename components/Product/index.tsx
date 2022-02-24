@@ -4,7 +4,7 @@ import Image from "next/image";
 import Button from "./Button";
 
 export default function Product({ product }: { product: IProduct }) {
-  const { category, name, cost, img } = product;
+  const { category, name, img } = product;
   return (
     <StyledProduct>
       <div className="product__top">
@@ -16,7 +16,7 @@ export default function Product({ product }: { product: IProduct }) {
           <p className="product__category">{category}</p>
         </div>
       </div>
-      <Button cost={cost} />
+      <Button product={product} />
     </StyledProduct>
   );
 }

@@ -1,4 +1,5 @@
 import { ChangeEvent, useEffect, useState } from "react";
+import NotificationsContainer from "../NotificationsContainer";
 import Pagination from "../Pagination";
 import Product from "../Product";
 import { StyledCatalog } from "./styles";
@@ -7,6 +8,7 @@ export interface Product {
   _id: string;
   name: string;
   cost: number;
+  quantity: number;
   category: string;
   img: {
     url: string;
@@ -33,10 +35,8 @@ export default function Catalog() {
     }
   };
 
-  console.log(amountPerPage);
-
   useEffect(() => {
-    setFilteredProducts(() => products.slice(0, amountPerPage));
+    setFilteredProducts((products) => products.slice(0, amountPerPage));
   }, [amountPerPage]);
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export default function Catalog() {
         resizeFunction();
         setFilteredProducts(response.slice(0, amountPerPage));
       });
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const displayProducts = () => {
     if (currentPage === 1) {
@@ -77,7 +77,7 @@ export default function Catalog() {
     }
   };
 
-  useEffect(() => displayProducts(), [currentPage]);
+  useEffect(() => displayProducts(), [currentPage]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleSort = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.value === "Most Recent") {
@@ -114,6 +114,7 @@ export default function Catalog() {
 
   return (
     <StyledCatalog id="catalog">
+      <NotificationsContainer />
       <h2>
         <span>TECH</span> PRODUCTS
       </h2>

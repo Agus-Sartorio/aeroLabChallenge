@@ -7,7 +7,7 @@ import PopUp from '../PopUp';
 const AeropayDropdown = () => {
 
     const [isOpen, setIsOpen] = useState(false);
-    const value = useContext(Context);
+    const {user} = useContext(Context)!;
 
     const handleClick = () => setIsOpen(!isOpen);
 
@@ -15,7 +15,7 @@ const AeropayDropdown = () => {
         <StyledContainer>
             <StyledAeropay onClick={handleClick} className={isOpen ? 'isOpen' : undefined}>
                 <Image src='/assets/icons/aeropay-1.svg' width='32' height='32' alt='' />
-                <span className='points'>{value?.user.puntos}</span>
+                <span className='points'>{user?.puntos}</span>
                 <Image className='chevron' src='/assets/icons/chevron-down.svg' width='15' height='8' alt='' />
             </StyledAeropay>
             {isOpen &&

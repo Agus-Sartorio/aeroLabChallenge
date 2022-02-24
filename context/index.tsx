@@ -1,4 +1,5 @@
 import { createContext, useState, Dispatch, SetStateAction } from "react";
+import { Product } from "../components/Catalog";
 
 export const Context = createContext<Value | null>(null);
 
@@ -8,7 +9,7 @@ interface Props {
 
 interface User {
   puntos: number;
-  productos: [];
+  productos: Product[];
 }
 
 interface Value {
