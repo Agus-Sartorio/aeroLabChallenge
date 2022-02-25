@@ -57,6 +57,26 @@ export const StyledHero = styled.section`
     margin-top: 64px;
     cursor: pointer;
     text-decoration: none;
+    transition: transform 300ms;
+    transform-origin: left;
+
+    img {
+      transition: transform 300ms;
+    }
+
+    &:hover,
+    &:focus {
+      transform: translateY(-3px) scale(1.03);
+      outline: none;
+
+      img {
+        transform: translateY(5px);
+      }
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
 
     span {
       margin-right: 12.5px;

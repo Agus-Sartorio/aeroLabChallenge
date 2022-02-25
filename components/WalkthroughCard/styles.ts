@@ -7,6 +7,11 @@ export const StyledArticle = styled.article`
   box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.05);
   padding: 12px;
   background-color: var(--white);
+  transition: box-shadow 300ms;
+
+  &:hover {
+    box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.15);
+  }
 
   .top-img {
     height: 500px;

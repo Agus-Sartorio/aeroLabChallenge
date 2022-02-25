@@ -14,14 +14,27 @@ export const StyledSection = styled.section`
     left: 50%;
     transform: translateX(-50%);
     margin-top: -75px;
+    transition: transform 300ms;
+
+    &:hover {
+      transform: translate(-50%, -10px);
+    }
   }
 
   .card:first-child {
     transform: translateX(-130%) rotate(-3deg);
+
+    &:hover {
+      transform: translate(-130%, -10px) rotate(-3deg);
+    }
   }
 
   .card:last-child {
     transform: translateX(30%) rotate(3deg);
+
+    &:hover {
+      transform: translate(30%, -10px) rotate(3deg);
+    }
   }
 
   @media (max-width: 1024px) {
@@ -38,6 +51,10 @@ export const StyledSection = styled.section`
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      &:hover {
+        transform: translateY(-10px);
+      }
     }
     .container {
       display: flex;

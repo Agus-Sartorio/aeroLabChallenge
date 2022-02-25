@@ -22,6 +22,7 @@ const Hero = () => {
             width="32"
             height="32"
             alt=""
+            aria-hidden="true"
           />
         </a>
       </div>
