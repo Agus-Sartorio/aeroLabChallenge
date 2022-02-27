@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+<img src='https://i.imgur.com/afIg9Zl.png' alt="aeroLab" />
+ <h1>Challenge Aerolab
+  
+ <small>Por Agustin Sartorio</small>
+ </h1>
+</div>
 
-## Getting Started
+<p>Este es un desafío de front-end enviado por Aerolab, hecho con Next.js.</p>
 
-First, run the development server:
+<br />
+
+## 💻 ¿Está deployado?
+
+Lo podes ver en vivo acá: http://aero-lab-challenge.vercel.app
+
+<br />
+
+## 🤔 ¿Cómo iniciar el proyecto localmente?
+
+Primero, clonarlo con:
 
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/Agus-Sartorio/aeroLabChallenge.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Una vez clonado ingresar `npm install` y luego `npm run dev` e ir en el navegador al http://localhost:3000
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<br />
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 🛒 ¿Cuál era el objetivo de este challenge?
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+La idea era replicar un diseño hecho en Figma y agregar distintas interacciones para el usuario.
 
-## Learn More
+<br />
 
-To learn more about Next.js, take a look at the following resources:
+## 🧱 ¿Qué tecnologías se usaron?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Utilicé Next.js, Typescript y Styled-Components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<br />
 
-## Deploy on Vercel
+## 👨‍💻 ¿Qué tiene de interesante este código?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Intenté seguir las mejores prácticas, modularizando y reutilizando todo lo más posible. Mi objetivo era tener un código prolijo pero eficiente.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Se prestó especial atención a la accesibilidad de la página y al diseño en general, conteniendo los aria-label apropiados, permitiendo el desplazamiento con teclado, sin descuidar el responsive y adaptando los tamaños para conseguir la mejor visualización.
