@@ -55,6 +55,12 @@ export const Btn = styled.button`
   margin-top: 16px;
   font: inherit;
   cursor: pointer;
+  transition: transform 300ms;
+
+  &:hover {
+    transform: translateY(-3px) scale(1.03);
+    outline: none;
+  }
 
   span:first-child {
     margin-right: 12px;
@@ -68,6 +74,7 @@ export const Btn = styled.button`
     background-image: none;
     background-color: var(--grey-200);
     color: var(--grey-600);
+    pointer-events: none;
   }
 
   &.processing {

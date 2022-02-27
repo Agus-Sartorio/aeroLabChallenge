@@ -42,6 +42,18 @@ export const StyledCatalog = styled.section`
     color: var(--grey-600);
     background-color: white;
     font-size: inherit;
+    transition: transform 300ms;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-3px) scale(1.03);
+      outline: none;
+      border-color: #f279f2;
+    }
+
+    &:active {
+      border-color: #f279f2;
+    }
   }
 
   .sort__container {
@@ -62,6 +74,11 @@ export const StyledCatalog = styled.section`
       font-size: 18px;
       margin-right: 12px;
       cursor: pointer;
+      transition: transform 300ms;
+
+      &:hover {
+        transform: scale(1.05);
+      }
     }
     span {
       background-image: var(--brand-gradient);

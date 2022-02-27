@@ -75,6 +75,13 @@ textarea {
   color: inherit;
 }
 
+a:hover {
+  background-image: var(--brand-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .sr_only {
   position: absolute;
   width: 1px;
