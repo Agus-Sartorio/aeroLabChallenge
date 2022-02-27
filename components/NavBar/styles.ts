@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledNavBar = styled.nav`
   max-width: var(--max-width);
+  width: calc(100vw - 40px);
   margin: 0 auto;
   padding: 40px 0;
   display: flex;

@@ -29,7 +29,7 @@ export default function Pagination({
       <button
         onClick={previousPage}
         disabled={currentPage === 1}
-        aria-label="pagina anterior"
+        aria-label="página anterior"
       >
         <Image
           className="chevron"
@@ -48,7 +48,7 @@ export default function Pagination({
       <button
         onClick={nextPage}
         disabled={currentPage === totalPages}
-        aria-label="pagina siguiente"
+        aria-label="página siguiente"
       >
         <Image
           className="chevron"

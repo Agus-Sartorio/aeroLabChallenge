@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { StyledHero } from "./styles";
-import hero from "../../public/assets/illustrations/Hero-bg.png";
 
 const Hero = () => {
   return (

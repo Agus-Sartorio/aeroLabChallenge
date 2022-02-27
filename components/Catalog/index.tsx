@@ -16,10 +16,13 @@ export interface Product {
   };
 }
 
+type SortTypes = "Most Recent" | "Lowest Price" | "Highest Price";
+
 export default function Catalog() {
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [defaultSort, setDefaultSort] = useState<SortTypes>("Most Recent");
   const [mostRecentProduct, setMostRecentProduct] = useState<Product[]>([]);
   const [amountPerPage, setAmountPerPage] = useState(16);
   const [filtered, setFiltered] = useState(false);
@@ -84,6 +87,7 @@ export default function Catalog() {
       setCurrentPage(1);
       setProducts(mostRecentProduct);
       setFilteredProducts(mostRecentProduct.slice(0, amountPerPage));
+      setDefaultSort("Most Recent");
       return;
     }
     setCurrentPage(1);
@@ -98,6 +102,9 @@ export default function Catalog() {
       })
     );
     setFilteredProducts(productsCopy.slice(0, amountPerPage));
+    setDefaultSort(
+      e.target.value === "Lowest Price" ? "Lowest Price" : "Highest Price"
+    );
   };
 
   const handleFilter = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -151,6 +158,7 @@ export default function Catalog() {
               name="points"
               id="value1"
               value="Most Recent"
+              checked={defaultSort === "Most Recent"}
               onChange={handleSort}
             />
             <label htmlFor="value1">
@@ -161,6 +169,7 @@ export default function Catalog() {
               name="points"
               id="value2"
               value="Lowest Price"
+              checked={defaultSort === "Lowest Price"}
               onChange={handleSort}
             />
             <label htmlFor="value2">
@@ -171,6 +180,7 @@ export default function Catalog() {
               name="points"
               id="value3"
               value="Highest Price"
+              checked={defaultSort === "Highest Price"}
               onChange={handleSort}
             />
             <label htmlFor="value3">

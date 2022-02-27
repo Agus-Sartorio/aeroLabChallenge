@@ -8,7 +8,7 @@ export const StyledHero = styled.section`
   background-image: url("/assets/illustrations/single-wave-pattern.svg");
   /*  align-items: center; */
   justify-content: space-between;
-  overflow-y: hidden;
+  overflow: hidden;
 
   h1 {
     line-height: 0.8;
@@ -27,11 +27,11 @@ export const StyledHero = styled.section`
     -webkit-background-clip: text;
     color: transparent;
     display: block;
-    font-size: var(--ff-heading-300);
+    font-size: clamp(120px, 14vw, var(--ff-heading-300));
     font-weight: 900;
   }
   .texto3 {
-    font-size: var(--ff-heading-300);
+    font-size: clamp(120px, 14vw, var(--ff-heading-300));
     font-weight: 900;
     color: var(--grey-900);
   }
@@ -87,6 +87,7 @@ export const StyledHero = styled.section`
   .hero-img {
     margin-top: -85px;
     width: 100%;
+    min-width: 600px;
     background-image: url("assets/illustrations/Hero-bg.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -123,12 +124,15 @@ export const StyledHero = styled.section`
 
     .hero-img {
       height: 520px;
+      min-width: auto;
       margin-top: 50px;
       background-image: url("assets/illustrations/hero-responsive.png");
     }
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 555px) {
+    width: 100%;
+
     .hero-img {
       background-size: cover;
       margin-top: 0;

@@ -25,6 +25,8 @@ export const StyledPagination = styled.div`
     background-color: var(--brand-light);
     padding: 8px;
     border-radius: 8px;
+    width: 40px;
+    height: 40px;
     border: none;
     cursor: pointer;
     transition: background-color 200ms;

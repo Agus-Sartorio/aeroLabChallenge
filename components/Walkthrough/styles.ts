@@ -7,6 +7,8 @@ export const StyledSection = styled.section`
 
   .container {
     position: relative;
+    justify-content: center;
+    width: calc(100% - 40px);
   }
 
   .card {
@@ -23,6 +25,7 @@ export const StyledSection = styled.section`
 
   .card:first-child {
     transform: translateX(-130%) rotate(-3deg);
+    margin-left: 0;
 
     &:hover {
       transform: translate(-130%, -10px) rotate(-3deg);
@@ -31,6 +34,7 @@ export const StyledSection = styled.section`
 
   .card:last-child {
     transform: translateX(30%) rotate(3deg);
+    margin-right: 0;
 
     &:hover {
       transform: translate(30%, -10px) rotate(3deg);
@@ -61,7 +65,7 @@ export const StyledSection = styled.section`
     }
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 730px) {
     padding-top: 363px;
     margin-top: -380px;
 

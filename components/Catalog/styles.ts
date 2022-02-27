@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledCatalog = styled.section`
   max-width: var(--max-width);
+  width: calc(100vw - 40px);
   margin: 200px auto 0;
 
   h2 {
@@ -100,6 +101,7 @@ export const StyledCatalog = styled.section`
   .products {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 80px 24px;
     margin-top: 67px;
   }
@@ -165,13 +167,19 @@ export const StyledCatalog = styled.section`
     }
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 730px) {
     h2 {
       text-align: center;
     }
     .filter__select,
     .filter__container {
-      width: 100%;
+      width: calc(100% - 20px);
+    }
+
+    .container {
+      & > div:last-child {
+        display: none;
+      }
     }
 
     .sort__container {

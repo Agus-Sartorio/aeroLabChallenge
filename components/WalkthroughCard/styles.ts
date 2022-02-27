@@ -14,11 +14,11 @@ export const StyledArticle = styled.article`
   }
 
   .top-img {
-    height: 500px;
     background-image: var(--illustration-bg);
     border-radius: 24px 24px 0 0;
     border: 1px solid var(--grey-300);
     overflow: hidden;
+    height: min(500px, 42vw);
   }
 
   .info {
@@ -26,6 +26,7 @@ export const StyledArticle = styled.article`
     border-radius: 0 0 24px 24px;
     border: 1px solid var(--grey-300);
     background-color: var(--white);
+    width: 100%;
 
     h3 {
       background-image: var(--brand-gradient);
@@ -33,7 +34,7 @@ export const StyledArticle = styled.article`
       -webkit-background-clip: text;
       color: transparent;
       font-weight: 900;
-      font-size: var(--ff-heading-100);
+      font-size: clamp(25px, 3vw, var(--ff-heading-100));
       text-transform: uppercase;
       display: inline-flex;
       align-items: center;
@@ -54,7 +55,7 @@ export const StyledArticle = styled.article`
 
     p {
       font-weight: 600;
-      font-size: var(--ff-body-200);
+      font-size: clamp(var(--ff-body-100), 2vw, var(--ff-body-200));
       line-height: 150%;
       color: var(--grey-600);
       max-width: 30ch;
@@ -67,7 +68,11 @@ export const StyledArticle = styled.article`
       flex: 1;
     }
   }
-
-  @media (max-width: 375px) {
+  @media (max-width: 730px) {
+    .info {
+      p {
+        max-width: 100%;
+      }
+    }
   }
 `;
