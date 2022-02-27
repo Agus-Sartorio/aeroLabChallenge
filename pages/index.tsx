@@ -59,7 +59,7 @@ const Home: NextPage = () => {
       <Catalog />
       <footer className="footer_index">
         <Link href="https://github.com/Agus-Sartorio/aeroLabChallenge" passHref>
-          <a>
+          <a className="repo">
             <Image src={GitHub} alt="github-logo" />
             <span>View this repository</span>
           </a>

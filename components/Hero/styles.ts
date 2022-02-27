@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledHero = styled.section`
   display: flex;
   max-width: var(--max-width);
+  width: calc(100vw - 40px);
   margin: 0 auto;
   background-image: url("/assets/illustrations/single-wave-pattern.svg");
   /*  align-items: center; */

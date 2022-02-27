@@ -68,14 +68,14 @@ textarea {
   margin-left: 10px;
 }
 
-.footer_index a {
+.footer_index .repo {
   display: flex;
   align-items: center;
   text-decoration: none;
   color: inherit;
 }
 
-a:hover {
+.repo:hover {
   background-image: var(--brand-gradient);
   background-clip: text;
   -webkit-background-clip: text;
